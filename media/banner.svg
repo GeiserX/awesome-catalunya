@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="800" height="200">
+  <defs>
+    <clipPath id="r"><rect width="800" height="200" rx="16"/></clipPath>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0f"/><stop offset="100%" stop-color="#14141f"/>
+    </linearGradient>
+    <filter id="b1"><feGaussianBlur stdDeviation="40"/></filter>
+  </defs>
+  <g clip-path="url(#r)">
+    <rect width="800" height="200" fill="url(#bg)"/>
+    <ellipse cx="150" cy="180" rx="200" ry="120" fill="#DA121A" opacity="0.15" filter="url(#b1)"/>
+    <ellipse cx="650" cy="20" rx="200" ry="120" fill="#FCDD09" opacity="0.1" filter="url(#b1)"/>
+    <rect width="800" height="2" fill="#DA121A" opacity="0.6"/>
+    <!-- Senyera stripes -->
+    <g opacity="0.12">
+      <rect x="0" y="130" width="800" height="6" fill="#FCDD09"/>
+      <rect x="0" y="140" width="800" height="6" fill="#DA121A"/>
+      <rect x="0" y="150" width="800" height="6" fill="#FCDD09"/>
+      <rect x="0" y="160" width="800" height="6" fill="#DA121A"/>
+      <rect x="0" y="170" width="800" height="6" fill="#FCDD09"/>
+      <rect x="0" y="180" width="800" height="6" fill="#DA121A"/>
+      <rect x="0" y="190" width="800" height="6" fill="#FCDD09"/>
+    </g>
+    <text x="400" y="75" text-anchor="middle" font-family="system-ui,sans-serif" font-size="36" fill="#fff" font-weight="700" letter-spacing="1">awesome-catalunya</text>
+    <rect x="280" y="86" width="240" height="2" rx="1" fill="#DA121A" opacity="0.5"/>
+    <text x="400" y="116" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13" fill="rgba(255,255,255,0.5)" font-weight="300" letter-spacing="3">SOFTWARE OPEN SOURCE PER A CATALUNYA</text>
+  </g>
+</svg>

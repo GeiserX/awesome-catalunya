@@ -1,0 +1,25 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: GeiserX/awesome-lint-extra@main
+        with:
+          require_badges: 'true'
+          badge_types: '["stars", "last-commit", "language", "license"]'
+          check_alphabetical: 'true'
+  links:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --insecure --accept 200..=403 --exclude img.shields.io README.md
+          fail: true

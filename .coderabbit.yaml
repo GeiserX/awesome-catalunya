@@ -1,0 +1,51 @@
+language: "en-US"
+tone_instructions: "Be direct and concise. No fluff."
+
+reviews:
+  profile: "chill"
+  high_level_summary: true
+  collapse_walkthrough: true
+  poem: false
+  sequence_diagrams: false
+  suggested_reviewers: false
+  auto_review:
+    enabled: true
+    drafts: false
+    ignore_title_keywords:
+      - "WIP"
+      - "DO NOT REVIEW"
+  path_instructions:
+    - path: "**/*.md"
+      instructions: |
+        Check that links are not broken and use HTTPS where possible.
+        Verify alphabetical ordering within sections is maintained.
+        Ensure descriptions are concise and follow the existing format.
+    - path: "scripts/**"
+      instructions: |
+        Verify scripts handle errors gracefully.
+        Check that URLs are validated before processing.
+  tools:
+    gitleaks:
+      enabled: true
+    actionlint:
+      enabled: true
+    yamllint:
+      enabled: true
+    markdownlint:
+      enabled: true
+    languagetool:
+      enabled: true
+    shellcheck:
+      enabled: true
+
+chat:
+  auto_reply: true
+
+knowledge_base:
+  learnings:
+    scope: "local"
+  code_guidelines:
+    enabled: true
+    filePatterns:
+      - "AGENTS.md"
+      - "CLAUDE.md"
