@@ -8,7 +8,7 @@ Directrices para los mantenedores de esta lista. Esta guía es común a todas la
 
 El criterio fundamental es: **se acepta software que da soporte específico a Catalunya, no software hecho por alguien de Catalunya.**
 
-Un repositorio se incluye porque interactúa con instituciones, servicios, infraestructura, normativas o datos propios de Catalunya. No basta con que el autor resida o trabaje aquí. Un framework genérico creado por un developer de Catalunya no pertenece a esta lista. Un cliente para la API de datos abiertos del gobierno de Catalunya o una integración con servicios públicos de Catalunya sí.
+Un repositorio se incluye porque interactúa con instituciones, servicios, infraestructura, normativas o datos propios de Catalunya. No basta con que el autor sea de Catalunya o resida aquí. Un framework genérico creado por un developer de Catalunya no pertenece a esta lista. Un cliente para una API de servicios de Catalunya sí.
 
 - **Sí:** Clientes de APIs de instituciones de Catalunya, integraciones con servicios públicos regionales, scrapers de transporte o datos abiertos de Catalunya.
 - **No:** Librerías genéricas creadas por equipos de Catalunya, software genérico cuyo autor simplemente reside en la comunidad.
@@ -34,7 +34,7 @@ Ver `AGENTS.md` (si existe) para criterios detallados adicionales.
 ## Añadir entradas como mantenedor
 
 1. Añadir la entrada simple en la sección correcta, en orden alfabético.
-2. Ejecutar el pipeline de insignias (si el repo dispone de los scripts):
+2. Ejecutar el pipeline de insignias (si existe):
    ```bash
    bash scripts/gather-metadata.sh
    python3 scripts/transform-readme.py
@@ -45,9 +45,15 @@ Ver `AGENTS.md` (si existe) para criterios detallados adicionales.
    - Cuerpo: mensaje breve en español (tuteo) explicando la inclusión y ofreciendo retirarlo si lo prefiere.
    - **Un solo issue por propietario** — nunca abrir múltiples issues en repos del mismo usuario/organización.
 
-## Eliminar entradas
+## Eliminar entradas y DELETED.md
 
-Las entradas no se borran sin más. Se mueven a `DELETED.md` en la sección correspondiente:
+Cada repositorio tiene (o debe tener) un fichero `DELETED.md`. Es una pieza fundamental del mantenimiento: registra todos los proyectos que estuvieron en la lista y fueron retirados, junto con el motivo. Su propósito es:
+
+- **Evitar re-adiciones:** si alguien propone un proyecto ya retirado, se puede consultar por qué se eliminó.
+- **Preservar el historial:** deja constancia de decisiones pasadas para futuros mantenedores.
+- **Documentar razones:** cada entrada lleva contexto suficiente para entender la retirada.
+
+Las entradas nunca se borran sin más del README. Se mueven a `DELETED.md` en la sección correspondiente:
 
 | Razón | Sección en DELETED.md |
 |-------|-----------------------|
@@ -57,7 +63,7 @@ Las entradas no se borran sin más. Se mueven a `DELETED.md` en la sección corr
 | No cumple criterios de inclusión | Eliminados por no ser específicos de Catalunya |
 | Sustituido por otro proyecto | Reemplazados (enlazar sucesor) |
 
-Esto evita re-adiciones y preserva el historial.
+Si el repo aún no tiene `DELETED.md`, crearlo con las secciones anteriores la primera vez que se retire un proyecto.
 
 ## Mantenimiento periódico
 
@@ -70,6 +76,7 @@ Esto evita re-adiciones y preserva el historial.
     [ "$archived" = "true" ] && echo "ARCHIVADO: $repo"
   done
   ```
+  Mover los archivados a `DELETED.md`.
 
 ## Herramientas
 
