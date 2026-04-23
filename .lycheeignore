@@ -1,0 +1,3 @@
+# LICENSE file links — repos without a LICENSE file at the expected path
+# The shields.io license badge still works via GitHub API
+https://github.com/.*/blob/.*/LICENSE.*
