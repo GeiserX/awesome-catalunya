@@ -1,4 +1,4 @@
-# AGENTS.md — awesome-catalunya
+# CLAUDE.md — awesome-catalunya
 
 ## Propósito
 
