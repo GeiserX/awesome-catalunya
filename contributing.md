@@ -8,7 +8,7 @@ Gracias por tu interés en contribuir. Esta selección crece gracias a la comuni
 
 - Asegúrate de que el proyecto es **open source** y tiene un repositorio público.
 - El proyecto debe **dar soporte específico a Catalunya** o incluir funcionalidades relevantes para usuarios en esta comunidad autónoma.
-- El proyecto debe estar **mantenido activamente** (actividad en los últimos 3 años) y no estar archivado.
+- El proyecto debe **seguir haciendo su trabajo** y no estar archivado. Si consume un servicio, que siga funcionando contra él; si no consume ninguno (un validador, un parser, un dataset), basta con que su lógica siga siendo correcta. No exigimos commits recientes: un proyecto archivado se retira sin más; uno que no lo está se retira solo cuando ya no funciona, aunque su último commit sea de ayer, y para retirarlo hay que poder enseñar el fallo.
 - Cada entrada debe seguir el formato: `- [Nombre](URL) - Descripción breve que empieza en mayúscula y termina con punto.`
 - Añade la entrada en **orden alfabético** dentro de la categoría correspondiente.
 - Comprueba que no hay **duplicados** ni errores tipográficos.
@@ -40,7 +40,7 @@ Gracias por tu interés en contribuir. Esta selección crece gracias a la comuni
 
 ### Reportar problemas
 
-Si encuentras enlaces rotos, proyectos archivados o información incorrecta, abre un issue describiendo el problema.
+Si encuentras enlaces rotos, proyectos archivados, proyectos que han dejado de funcionar o información incorrecta, abre un issue describiendo el problema.
 
 ## Código de conducta
 
