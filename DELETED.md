@@ -25,9 +25,9 @@ Repos que fueron retirados de la lista porque fueron archivados, deprecados o ya
 
 ## Repos inexistentes o renombrados
 
+- `AjuntamentdeBarcelona/bustia-etica-bcn` - Buzón ético digital del Ajuntament de Barcelona. Repo eliminado o privado (GitHub devuelve 404).
 - `AjuntamentdeBarcelona/ckanext-federagobes` - Extensión CKAN para federar datos con datos.gob.es desde portales municipales. Repo eliminado o privado (GitHub devuelve 404).
 - `AjuntamentdeBarcelona/ckanext-odatabcn` - Extensión CKAN del portal de datos abiertos de Barcelona. Repo eliminado o privado (GitHub devuelve 404).
-- `DiputacioBarcelona/app-municipis` - Aplicación de datos abiertos de la Diputació de Barcelona. Repo eliminado o privado (GitHub devuelve 404).
-- `AjuntamentdeBarcelona/bustia-etica-bcn` - Buzón ético digital del Ajuntament de Barcelona. Repo eliminado o privado (GitHub devuelve 404).
 - `AjuntamentdeBarcelona/django-bima-core` - Aplicación Django para gestionar activos digitales municipales del Ajuntament de Barcelona. Repo eliminado o privado (GitHub devuelve 404).
 - `AjuntamentdeBarcelona/PICS-WEBAPP` - Plataforma de información y comunicación de servicios del Ajuntament de Barcelona. Repo eliminado o privado (GitHub devuelve 404).
+- `DiputacioBarcelona/app-municipis` - Aplicación de datos abiertos de la Diputació de Barcelona. Repo eliminado o privado (GitHub devuelve 404).
