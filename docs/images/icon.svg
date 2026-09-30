@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" width="256" height="256" role="img" aria-label="Awesome Catalunya">
+  <!-- The favicon: logo.svg (one panot tile from banner.svg) on a rounded plate
+       in the banner's darkest sky, with the banner's own lamp glow (id "lamp",
+       #f0b46a) behind the tile. -->
+  <defs>
+    <radialGradient id="aw-lamp" cx="180" cy="180" r="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f0b46a" stop-opacity="0.32"/>
+      <stop offset="60%" stop-color="#0a0a0f" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0a0a0f" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="aw-tile-icon"><rect width="46" height="46"/></clipPath>
+  </defs>
+  <rect width="360" height="360" rx="72" fill="#0a0a0f"/>
+  <rect width="360" height="360" rx="72" fill="url(#aw-lamp)"/>
+  <g transform="translate(60.4 60.4) scale(5.2)">
+    <g clip-path="url(#aw-tile-icon)">
+    <rect width="46" height="46" fill="#8a8277"/>
+    <g fill="#aaa294" transform="translate(0.9 0.9)"><path d="M0 -3.5 C-5.2 -5.5 -7.6 -9.5 -7.2 -13.5 C-6.8 -17.8 -3.6 -20.2 0 -20.2 C3.6 -20.2 6.8 -17.8 7.2 -13.5 C7.6 -9.5 5.2 -5.5 0 -3.5Z" transform="translate(23.0 23.0) rotate(0)"/><path d="M0 -3.5 C-5.2 -5.5 -7.6 -9.5 -7.2 -13.5 C-6.8 -17.8 -3.6 -20.2 0 -20.2 C3.6 -20.2 6.8 -17.8 7.2 -13.5 C7.6 -9.5 5.2 -5.5 0 -3.5Z" transform="translate(23.0 23.0) rotate(90)"/><path d="M0 -3.5 C-5.2 -5.5 -7.6 -9.5 -7.2 -13.5 C-6.8 -17.8 -3.6 -20.2 0 -20.2 C3.6 -20.2 6.8 -17.8 7.2 -13.5 C7.6 -9.5 5.2 -5.5 0 -3.5Z" transform="translate(23.0 23.0) rotate(180)"/><path d="M0 -3.5 C-5.2 -5.5 -7.6 -9.5 -7.2 -13.5 C-6.8 -17.8 -3.6 -20.2 0 -20.2 C3.6 -20.2 6.8 -17.8 7.2 -13.5 C7.6 -9.5 5.2 -5.5 0 -3.5Z" transform="translate(23.0 23.0) rotate(270)"/><circle cx="23.0" cy="23.0" r="4.2"/><circle cx="0" cy="0" r="5.6"/><circle cx="46" cy="0" r="5.6"/><circle cx="0" cy="46" r="5.6"/><circle cx="46" cy="46" r="5.6"/></g>
+    <g fill="#48423b"><path d="M0 -3.5 C-5.2 -5.5 -7.6 -9.5 -7.2 -13.5 C-6.8 -17.8 -3.6 -20.2 0 -20.2 C3.6 -20.2 6.8 -17.8 7.2 -13.5 C7.6 -9.5 5.2 -5.5 0 -3.5Z" transform="translate(23.0 23.0) rotate(0)"/><path d="M0 -3.5 C-5.2 -5.5 -7.6 -9.5 -7.2 -13.5 C-6.8 -17.8 -3.6 -20.2 0 -20.2 C3.6 -20.2 6.8 -17.8 7.2 -13.5 C7.6 -9.5 5.2 -5.5 0 -3.5Z" transform="translate(23.0 23.0) rotate(90)"/><path d="M0 -3.5 C-5.2 -5.5 -7.6 -9.5 -7.2 -13.5 C-6.8 -17.8 -3.6 -20.2 0 -20.2 C3.6 -20.2 6.8 -17.8 7.2 -13.5 C7.6 -9.5 5.2 -5.5 0 -3.5Z" transform="translate(23.0 23.0) rotate(180)"/><path d="M0 -3.5 C-5.2 -5.5 -7.6 -9.5 -7.2 -13.5 C-6.8 -17.8 -3.6 -20.2 0 -20.2 C3.6 -20.2 6.8 -17.8 7.2 -13.5 C7.6 -9.5 5.2 -5.5 0 -3.5Z" transform="translate(23.0 23.0) rotate(270)"/><circle cx="23.0" cy="23.0" r="4.2"/><circle cx="0" cy="0" r="5.6"/><circle cx="46" cy="0" r="5.6"/><circle cx="0" cy="46" r="5.6"/><circle cx="46" cy="46" r="5.6"/></g>
+    </g>
+  </g>
+</svg>

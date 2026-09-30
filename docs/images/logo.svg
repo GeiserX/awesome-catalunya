@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 46" width="46" height="46" role="img" aria-label="Awesome Catalunya">
+  <!-- One repeat of the panot pattern in banner.svg (id "panot"): the grey tile,
+       its light offset flower and the dark flower, same paths and colours.
+       Changed: the 1.3-unit grout lines on the top and left edges are dropped
+       (they are the joint between tiles and read as a dark line on the header),
+       and the tile is clipped to its own square. -->
+  <defs>
+    <clipPath id="aw-tile"><rect width="46" height="46"/></clipPath>
+  </defs>
+  <g clip-path="url(#aw-tile)">
+    <rect width="46" height="46" fill="#8a8277"/>
+    <g fill="#aaa294" transform="translate(0.9 0.9)"><path d="M0 -3.5 C-5.2 -5.5 -7.6 -9.5 -7.2 -13.5 C-6.8 -17.8 -3.6 -20.2 0 -20.2 C3.6 -20.2 6.8 -17.8 7.2 -13.5 C7.6 -9.5 5.2 -5.5 0 -3.5Z" transform="translate(23.0 23.0) rotate(0)"/><path d="M0 -3.5 C-5.2 -5.5 -7.6 -9.5 -7.2 -13.5 C-6.8 -17.8 -3.6 -20.2 0 -20.2 C3.6 -20.2 6.8 -17.8 7.2 -13.5 C7.6 -9.5 5.2 -5.5 0 -3.5Z" transform="translate(23.0 23.0) rotate(90)"/><path d="M0 -3.5 C-5.2 -5.5 -7.6 -9.5 -7.2 -13.5 C-6.8 -17.8 -3.6 -20.2 0 -20.2 C3.6 -20.2 6.8 -17.8 7.2 -13.5 C7.6 -9.5 5.2 -5.5 0 -3.5Z" transform="translate(23.0 23.0) rotate(180)"/><path d="M0 -3.5 C-5.2 -5.5 -7.6 -9.5 -7.2 -13.5 C-6.8 -17.8 -3.6 -20.2 0 -20.2 C3.6 -20.2 6.8 -17.8 7.2 -13.5 C7.6 -9.5 5.2 -5.5 0 -3.5Z" transform="translate(23.0 23.0) rotate(270)"/><circle cx="23.0" cy="23.0" r="4.2"/><circle cx="0" cy="0" r="5.6"/><circle cx="46" cy="0" r="5.6"/><circle cx="0" cy="46" r="5.6"/><circle cx="46" cy="46" r="5.6"/></g>
+    <g fill="#48423b"><path d="M0 -3.5 C-5.2 -5.5 -7.6 -9.5 -7.2 -13.5 C-6.8 -17.8 -3.6 -20.2 0 -20.2 C3.6 -20.2 6.8 -17.8 7.2 -13.5 C7.6 -9.5 5.2 -5.5 0 -3.5Z" transform="translate(23.0 23.0) rotate(0)"/><path d="M0 -3.5 C-5.2 -5.5 -7.6 -9.5 -7.2 -13.5 C-6.8 -17.8 -3.6 -20.2 0 -20.2 C3.6 -20.2 6.8 -17.8 7.2 -13.5 C7.6 -9.5 5.2 -5.5 0 -3.5Z" transform="translate(23.0 23.0) rotate(90)"/><path d="M0 -3.5 C-5.2 -5.5 -7.6 -9.5 -7.2 -13.5 C-6.8 -17.8 -3.6 -20.2 0 -20.2 C3.6 -20.2 6.8 -17.8 7.2 -13.5 C7.6 -9.5 5.2 -5.5 0 -3.5Z" transform="translate(23.0 23.0) rotate(180)"/><path d="M0 -3.5 C-5.2 -5.5 -7.6 -9.5 -7.2 -13.5 C-6.8 -17.8 -3.6 -20.2 0 -20.2 C3.6 -20.2 6.8 -17.8 7.2 -13.5 C7.6 -9.5 5.2 -5.5 0 -3.5Z" transform="translate(23.0 23.0) rotate(270)"/><circle cx="23.0" cy="23.0" r="4.2"/><circle cx="0" cy="0" r="5.6"/><circle cx="46" cy="0" r="5.6"/><circle cx="0" cy="46" r="5.6"/><circle cx="46" cy="46" r="5.6"/></g>
+  </g>
+</svg>
