@@ -18,6 +18,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 ENTRY = re.compile(r"^- \[[^\]]+\]\(https?://")
+# DELETED.md also lists repos that no longer exist, with no link to give:
+# "- `owner/repo` - reason". They are retired entries too.
+RETIRED = re.compile(r"^- (?:\[[^\]]+\]\(https?://|`[^`]+` - )")
 H2 = re.compile(r"^## (.+)$")
 NOT_CATEGORIES = {
     "Contenido",
@@ -31,7 +34,7 @@ IMG = re.compile(r"<img\b[^>]*>")
 LISTED = re.compile(r"<li>\s*<a href=\"https?://")
 
 
-def _entries_by_section(text):
+def _entries_by_section(text, entry=ENTRY):
     """Yield (section title or None, is_entry) for every line."""
     section = None
     for line in text.splitlines():
@@ -39,7 +42,7 @@ def _entries_by_section(text):
         if heading:
             section = heading.group(1).strip()
             continue
-        yield section, bool(ENTRY.match(line))
+        yield section, bool(entry.match(line))
 
 
 def _counts():
@@ -55,7 +58,7 @@ def _counts():
     return {
         "proyectos": proyectos,
         "categorias": len(categories),
-        "retirados": sum(is_entry for _, is_entry in _entries_by_section(deleted)),
+        "retirados": sum(is_entry for _, is_entry in _entries_by_section(deleted, RETIRED)),
     }
 
 
