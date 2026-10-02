@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "catalunya",
+  "project_id": "26233c6f-d15d-4ce0-b2eb-798f9d1b9db4"
+}
