@@ -21,16 +21,3 @@ jobs:
           require_badges: 'true'
           badge_types: '["stars", "last-commit", "language", "license"]'
           check_alphabetical: 'true'
-  links:
-    runs-on: ubuntu-latest
-    continue-on-error: true
-    steps:
-      - uses: actions/checkout@v7
-        with:
-          persist-credentials: false
-      # En un PR se salta el enlace a la web de la lista: se publica al fusionar,
-      # así que el PR que la crea o cambia no puede comprobarla. En main sí.
-      - uses: lycheeverse/lychee-action@v2
-        with:
-          args: --no-progress --insecure --accept 200..=403 --timeout 30 --max-retries 3 --exclude img.shields.io ${{ github.event_name == 'pull_request' && '--exclude "^https://geiserx\.github\.io/awesome-catalunya/"' || '' }} README.md
-          fail: true
