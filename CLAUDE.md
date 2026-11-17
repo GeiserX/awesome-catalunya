@@ -35,7 +35,7 @@ Selección de software open source que da **soporte específico a Catalunya** �
 - Software de **ámbito europeo** — eso pertenece a awesome-europe.
 - Software de **otras comunidades autónomas** españolas.
 - Software creado por catalanes que **no tiene funcionalidad específica** de la región.
-- Repositorios **archivados o de solo lectura** — van a `DELETED.md`.
+- Repositorios **archivados o de solo lectura**. Si uno ya está en la lista, se decide con «Permanencia».
 - Repos donde el autor indica que el proyecto está **roto, sin mantenimiento o deprecado**.
 - Repos **sin README significativo** o que son claramente repos de test/experimento.
 - Ejercicios de clase o trabajos académicos sin utilidad real.
@@ -50,7 +50,7 @@ Selección de software open source que da **soporte específico a Catalunya** �
 
 **Mismo listón que [awesome-spain](https://github.com/GeiserX/awesome-spain):**
 
-- **No repos archivados**: si se descubre archivado tras la inclusión, mover a `DELETED.md` inmediatamente.
+- **No repos archivados**: si una entrada resulta estar archivada, se propone retirarla y pasa a `DELETED.md` cuando Sergio lo aprueba (ver «Permanencia»).
 - **Nada viejo sin comprobar**: lo viejo sin reputación se queda solo si se comprueba que funciona y ninguna entrada mantenida de la lista hace lo mismo (ver «Permanencia»).
 - **No repos rotos**: si el README dice «deprecated», «broken», «no longer maintained», «use X instead» o similar, no se incluye. Si ya está listado, se decide con «Permanencia»: «use X instead» con X mantenido en la lista cuenta como sustituido, y «no longer maintained» por sí solo no retira una entrada con reputación que sigue funcionando.
 - **Estrellas mínimas**: 5 estrellas y 3 meses de historia para entrar (ver «Mínimo para entrar»).
@@ -82,24 +82,36 @@ La única excepción es el software publicado por un organismo oficial (un minis
 ```bash
 gh api repos/<owner>/<repo> --jq '{estrellas: .stargazers_count, creado: .created_at}'
 # Fecha del primer commit: la última página de commits, de uno en uno.
-n=$(gh api "repos/<owner>/<repo>/commits?per_page=1" -i | sed -n 's/.*[?&]page=\([0-9]*\)>; rel="last".*/\1/p')
-gh api "repos/<owner>/<repo>/commits?per_page=1&page=${n:-1}" --jq '.[0].commit.author.date'
+# Para con error si la primera llamada falla o si hay más páginas sin enlace a la última,
+# en vez de leer la página 1, que tiene el commit más reciente.
+(
+  h=$(gh api "repos/<owner>/<repo>/commits?per_page=1" -i) || exit 1
+  n=$(printf '%s\n' "$h" | sed -n 's/.*[?&]page=\([0-9]*\)>; rel="last".*/\1/p')
+  if [ -z "$n" ] && printf '%s\n' "$h" | grep -q 'rel="next"'; then
+    echo "No hay enlace a la última página: no se puede saber el primer commit." >&2; exit 1
+  fi
+  gh api "repos/<owner>/<repo>/commits?per_page=1&page=${n:-1}" --jq '.[0].commit.author.date'
+)
 ```
 
 Respuesta al cerrar, en pocas líneas y sin pedir estrella:
 
 > Gracias por la propuesta. La cierro porque el repositorio todavía no llega al mínimo de la lista: 5 estrellas y 3 meses de historia. Cuando los tenga, vuelve a mandarlo y lo miro.
 
-Si el motivo es que es un volcado, dilo en su lugar:
+Si el motivo es que copia los datos de otro sitio sin el código que los genera, dilo en su lugar:
 
-> Gracias por la propuesta. La cierro porque el repositorio es una copia de datos publicados en otro sitio, sin el código que los genera, y la lista solo recoge proyectos cuyo contenido se pueda comprobar o rehacer. Si publicas ese código, vuelve a mandarlo y lo miro.
+> Gracias por la propuesta. La cierro porque el repositorio es una copia de datos publicados en otro sitio, sin el código que los genera, y la lista no recoge copias de datos sin ese código. Si publicas ese código, vuelve a mandarlo y lo miro.
+
+Si el motivo es que toda su historia son uno o dos commits del mismo día:
+
+> Gracias por la propuesta. La cierro porque toda la historia del repositorio son uno o dos commits del mismo día, y la lista solo recoge proyectos con algo de recorrido. Cuando tenga más historia, vuelve a mandarlo y lo miro.
 
 ## Verificación antes de añadir
 
 Si pasa el mínimo, comprobar:
 
 - **Existe y es público**: el enlace de GitHub funciona y el repo no es privado.
-- **No está archivado ni en solo lectura**: si está archivado, va a `DELETED.md` (sección «Archivados»).
+- **No está archivado ni en solo lectura**: si lo está, la PR se cierra sin añadirlo a ningún sitio; `DELETED.md` solo recoge lo que estuvo en la lista.
 - **Funciona hoy**: si **consume un servicio** (una API, una sede electrónica, una web que raspa), sigue haciéndolo. Si **no consume ninguno** (un validador, un formato, un dataset), su lógica o sus datos siguen siendo correctos. Antes de fusionar, se ejecuta o se coteja con la fuente oficial.
 - **No es un duplicado**: cruzar con `README.md` y `DELETED.md`. Si ya hay una entrada mantenida que hace lo mismo, la nueva tiene que aportar algo más.
 - **Calidad mínima**: tiene documentación (README) y no es un repositorio vacío o de pruebas.
