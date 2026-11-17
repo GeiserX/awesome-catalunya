@@ -51,10 +51,10 @@ Selección de software open source que da **soporte específico a Catalunya** �
 **Mismo listón que [awesome-spain](https://github.com/GeiserX/awesome-spain):**
 
 - **No repos archivados**: si se descubre archivado tras la inclusión, mover a `DELETED.md` inmediatamente.
-- **Nada viejo sin reputación**: lo viejo se queda solo si funciona y tiene reputación (ver «Permanencia»).
+- **Nada viejo sin comprobar**: lo viejo sin reputación se queda solo si se comprueba que funciona y ninguna entrada mantenida de la lista hace lo mismo (ver «Permanencia»).
 - **No repos rotos**: si el README dice «deprecated», «no longer maintained», «use X instead» o similar — no incluir. Mover a `DELETED.md` si ya está listado.
 - **Estrellas mínimas**: 5 estrellas y 3 meses de historia para entrar (ver «Mínimo para entrar»).
-- **Verificar cada repo** antes de añadir: comprobar `archived`, `pushed_at`, `stargazers_count` vía `gh api repos/owner/name`.
+- **Verificar cada repo** antes de añadir: comprobar `archived`, `stargazers_count` y `created_at` vía `gh api repos/owner/name`, y la fecha del último commit de la rama por defecto (no `pushed_at`).
 
 ## Formato de entrada
 
@@ -100,16 +100,21 @@ Si pasa el mínimo, comprobar:
 
 ## Permanencia: qué se queda y qué se retira
 
-Solo se queda el software que funciona y que tiene reputación o no tiene sustituto. Nada se retira sin que Sergio lo apruebe.
+Se queda lo que funciona y no tiene un sustituto mantenido en la lista. La reputación decide quién tiene que demostrar qué. Nada se retira sin que Sergio lo apruebe.
 
+- **Archivado**: se retira siempre.
 - **Roto**: se retira, tenga la edad que tenga. Hay que enseñar el fallo: ejecutar el proyecto, o comprobar que el servicio que consume ya no responde como espera.
-- **Viejo y sin reputación**: más de 3 años sin commits en la rama por defecto (no `pushed_at`, que las ramas de bots rejuvenecen) y sin reputación. Se retira, salvo que siga funcionando y ninguna entrada mantenida de la lista haga lo mismo.
-- **Viejo y con reputación**: se queda mientras funcione. Reputación es una de estas tres cosas:
-  - lo publica un organismo oficial;
-  - lo publica una organización conocida (rOpenSpain, Civio, Datadista, BSC/AINA…);
-  - tiene uso real visible: estrellas, forks, o descargas o dependientes en su registro (PyPI, npm, Packagist, RubyGems, CRAN, NuGet, crates.io). No hay un número fijo: se juzga caso a caso.
-- **Sustituido**: si otra entrada mantenida hace lo mismo, la vieja va a `DELETED.md` con el enlace a la que la sustituye.
+- **Sustituido**: si otra entrada mantenida de la lista hace lo mismo, la vieja se retira aunque tenga reputación. Va a `DELETED.md` con el enlace a la que la sustituye.
 - **Sirve a un sistema retirado**: se retira aunque sea oficial.
+- **Viejo**: más de 3 años sin commits en la rama por defecto (no `pushed_at`, que las ramas de bots rejuvenecen). Si no es ninguno de los casos anteriores:
+  - **con reputación**, se queda mientras no se demuestre que está roto;
+  - **sin reputación**, se queda solo si se comprueba que funciona hoy, ejecutándolo o cotejándolo con el servicio que consume. Si no se puede comprobar, se retira.
+
+Reputación es una de estas tres cosas:
+
+- lo publica un organismo oficial;
+- lo publica una organización conocida (rOpenSpain, Civio, Datadista, BSC/AINA…);
+- tiene uso real visible: estrellas, forks, o descargas o dependientes en su registro (PyPI, npm, Packagist, RubyGems, CRAN, NuGet, crates.io). No hay un número fijo: se juzga caso a caso.
 
 La revisión es trimestral. Lista las entradas con más de 3 años sin commits y revisa cada una con estos criterios; la tabla con la propuesta se le enseña a Sergio antes de mover nada a `DELETED.md`.
 
