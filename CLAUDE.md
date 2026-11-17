@@ -52,7 +52,7 @@ Selección de software open source que da **soporte específico a Catalunya** �
 
 - **No repos archivados**: si se descubre archivado tras la inclusión, mover a `DELETED.md` inmediatamente.
 - **Nada viejo sin comprobar**: lo viejo sin reputación se queda solo si se comprueba que funciona y ninguna entrada mantenida de la lista hace lo mismo (ver «Permanencia»).
-- **No repos rotos**: si el README dice «deprecated», «no longer maintained», «use X instead» o similar — no incluir. Mover a `DELETED.md` si ya está listado.
+- **No repos rotos**: si el README dice «deprecated», «broken», «no longer maintained», «use X instead» o similar, no se incluye. Si ya está listado, se decide con «Permanencia»: «use X instead» con X mantenido en la lista cuenta como sustituido, y «no longer maintained» por sí solo no retira una entrada con reputación que sigue funcionando.
 - **Estrellas mínimas**: 5 estrellas y 3 meses de historia para entrar (ver «Mínimo para entrar»).
 - **Verificar cada repo** antes de añadir: comprobar `archived`, `stargazers_count` y `created_at` vía `gh api repos/owner/name`, y la fecha del último commit de la rama por defecto (no `pushed_at`).
 
@@ -108,7 +108,7 @@ Se queda lo que funciona y no tiene un sustituto mantenido en la lista. La reput
 - **Sirve a un sistema retirado**: se retira aunque sea oficial.
 - **Viejo**: más de 3 años sin commits en la rama por defecto (no `pushed_at`, que las ramas de bots rejuvenecen). Si no es ninguno de los casos anteriores:
   - **con reputación**, se queda mientras no se demuestre que está roto;
-  - **sin reputación**, se queda solo si se comprueba que funciona hoy, ejecutándolo o cotejándolo con el servicio que consume. Si no se puede comprobar, se retira.
+  - **sin reputación**, se queda solo si se comprueba que funciona hoy, ejecutándolo, cotejándolo con el servicio que consume o, si es un dataset, cotejando sus datos con la fuente oficial. Si no se puede comprobar, se retira.
 
 Reputación es una de estas tres cosas:
 
